@@ -1,141 +1,168 @@
 
 
-// var stop=false
-//
-// var titleList = $("#titleList")
-//
-// var titles = [
-//   "a graphic designer",
-//   "an illustrator",
-//   "a photo editor",
-//   "a project manager",
-//   "a web developer",
-//   "a video editor",
-//   "a multimedia designer"
-// ]
-//
-// var i=0
-//
-// setInterval(function () {
-//   titleContainer.html(titles[i])
-//   if (stop == false){
-//     i++
-//   }
-//   if (i == 7){
-//     i=0
-//   }
-//
-// }, 300);
-//
-// titleContainer.on("mouseover", function (){
-//   stop=true
-//   i=6
-//   titleList.css("display", "block")
-// })
-
-
-var pics = [
-      //1
-    {
-      src:"photos/grammynoms.png",
-      alt:"Photo of a Record with a GRAMMY logo and glitter. Queer and POC artists nominated at the 2022 Grammy Awards.",
-      reference:"https://www.instagram.com/p/CWrjMlLMfJm/?utm_source=ig_web_copy_link"
-    },
-      //2
-    {
-      src:"photos/nmf.png",
-      alt:"",
-      reference:""
-    },
-      //3
-    {
-      src:"photos/hispanicheritagemonth.jpg",
-      alt:"Gliching scanned text that says Celebrating Hispanic Heritage Month from September to October 15th. Small text on right side is rotated 90 degrees and reads the same over and over.",
-      reference:"https://www.instagram.com/p/CT3Luw5J3LH/?utm_source=ig_web_copy_link"
-    },
-      //4
-    {
-      src:"photos/passthemic_brianachengpost.png",
-      alt:"#PasstheMic features Briana Cheng. Briana wears a bright red vinyl top and looks towards the left, text following the shape of her profile reading 'A&R at 4AD and Founder of B4'",
-      reference:"https://www.instagram.com/p/CTXtxHOvVEz/?utm_source=ig_web_copy_link"
-    },
-      //5
-    {
-      src:"photos/epitaph.png",
-      alt:"Bookshelf filled with CDs, vinyls, and amplifiers. Epitaph Records is Hiring",
-      reference:"https://www.instagram.com/p/CWe3XwWsYmS/?utm_source=ig_web_copy_link"
-    },
-      //6
-    {
-      src:"photos/snazzydog.jpg",
-      alt:"",
-      reference:""
-    },
-      //7
-    {
-      src:"photos/givingtuesday.png",
-      alt:"Stamped text 'Giving Tuesday' with same stamp creating an outline of a circle. Color of Music Collective logo above text along with a pair of airpods.",
-      reference:"https://www.instagram.com/p/CW66BL-M3JX/?utm_source=ig_web_copy_link"
-    },
-      //8
-    {
-      src:"photos/COMCthankyou.png",
-      alt:"",
-      reference:""
-    },
-
-    //  9
-    {
-      src:"photos/gwc.jpg",
-      alt:"",
-      reference:""
-    },
-      //10
-    {
-      src:"photos/taylor.jpg",
-      alt:"",
-      reference:""
-    },
-      //11
-
-    {
-      src:"photos/kwkplayer.jpg",
-      alt:"",
-      reference:""
-    },
-      //12
-    {
-      src:"photos/brainbreak.jpg",
-      alt:"",
-      reference:""
-    },
-    //   //14
-    // {
-    //   src:"photos/epitaph.png",
-    //   alt:"day 8!",
-    //   reference:"https://www.kodewithklossy.com"
-    // },
-    //   //15
-    // {
-    //   src:"photos/hispanicheritagemonth.jpg",
-    //   alt:"day 8!",
-    //   reference:"https://www.kodewithklossy.com"
-    // },
-    //   //16
-    // {
-    //   src:"photos/passthemic_brianachengpost.png",
-    //   alt:"day 8!",
-    //   reference:"https://www.kodewithklossy.com"
-    // },
-
-
-]
-
+var graphicsPhotoCollage = $('.graphics-photo-collage')
+var gifPhotoCollage = $('.gif-photo-collage')
+var brandPhotoCollage = $('.brand-photo-collage')
+var graphicsPhotoGallery=[]
+var gifPhotoGallery=[]
+var brandPhotoGallery=[]
 var i = 0
 
-console.log(pics.length)
 
-pics.forEach(function displayPics(picture){
+function fillGalleryArray(array, galleryType, galleryCount){
+  var fileCount = 1
+  while(fileCount<=galleryCount) {
+    if(galleryType=="gif"){
+      array.push({src:`photos/${galleryType}feed/story${fileCount}.png`, gif: `photos/${galleryType}feed/gif${fileCount}.gif`})
+    }
+    else{
+      array.push({src:`photos/${galleryType}feed/${fileCount}.png`})
+    }
+    fileCount++
+  }
+}
+
+fillGalleryArray(graphicsPhotoGallery, "graphics", 20)
+fillGalleryArray(gifPhotoGallery, "gif", 10)
+fillGalleryArray(brandPhotoGallery, "brand", 10)
+
+
+function isEven(array){
+  if (array.length%5 != 0){
+    array.pop()  }
+}
+
+function makeGallery(array, collageName, galleryType){
+array.forEach(function displayPics(picture){
+  isEven(array)
   i++
-  portfolio.append(`<img src="${picture.src}" alt="${picture.alt}" class="portfolio-photos" id="photo${i}">`)
+  if (galleryType=="gif"){
+  collageName.append(`<div class="story-background"><img src="${picture.src}" id="gif-photo${i}"><img src="${picture.gif}" id="gif${i}" class="gif-overlay"></div>`)
+  }
+  else{
+  collageName.append(`<img src="${picture.src}" id="${galleryType}-photo${i}">`)
+  }
+})}
+
+makeGallery(graphicsPhotoGallery, graphicsPhotoCollage, "graphics")
+makeGallery(gifPhotoGallery, gifPhotoCollage, "gif")
+makeGallery(brandPhotoGallery, brandPhotoCollage, "brand")
+
+
+// var messagesRef = firebase.database().ref('messages')
+//
+// var config = {
+//   apiKey: "AIzaSyBhwQgQb6IoEyFlSl8XcZBSsSq1r1xOLPE",
+//   authDomain: "portfolio-38893.firebaseapp.com",
+//   databaseURL: "https://portfolio-38893-default-rtdb.firebaseio.com",
+//   projectId: "portfolio-38893",
+//   storageBucket: "portfolio-38893.appspot.com",
+//   messagingSenderId: "344739750517",
+//   appId: "1:344739750517:web:1d8bd51f52ae61f49a4e3c",
+//   measurementId: "G-Q63H1FQT3D"
+// };
+// firebase.initializeApp(config);
+//
+// // Reference messages collection
+// var messagesRef = firebase.database().ref('messages');
+//
+// // Listen for form submit
+// document.getElementById('contactForm').addEventListener('submit', submitForm);
+//
+// // Submit form
+// function submitForm(e){
+//   e.preventDefault();
+//
+//   // Get values
+//   var name = getInputVal('name');
+//   var org = getInputVal('org');
+//   var email = getInputVal('email');
+//   var subject = getInputVal('subject');
+//   var message = getInputVal('message');
+//
+//   // Save message
+//   saveMessage(name, company, email, phone, message);
+//
+//   document.getElementById('contactForm').reset();
+// }
+//
+// // Function to get get form values
+// function getInputVal(id){
+//   return document.getElementById(id).value;
+// }
+//
+// // Save message to firebase
+// function saveMessage(name, company, email, phone, message){
+//   var newMessageRef = messagesRef.push();
+//   newMessageRef.set({
+//     name: name,
+//     company:company,
+//     email:email,
+//     phone:phone,
+//     message:message
+//   });
+// }
+//
+//
+
+
+var fonts=[
+  {
+    name:"Adalind",
+    price:"",
+    fam:"adalind",
+    placeholder:"Our coming of age has come and gone"
+  },
+  {
+    name:"Amelie Camille",
+    price:"",
+    fam:"amelie",
+    placeholder:"I knew you’d linger like a tattoo kiss"
+  },
+  {
+    name:"Cameron John Regular",
+    price:"",
+    fam:"cam1",
+    placeholder:"Cancel plans just in case you’d call"
+  },
+  {
+    name:"Cameron John Black",
+    price:"",
+    fam:"cam2",
+    placeholder:"I don’t know anything, but I know I miss you"
+  },
+  {
+    name:"Dominique",
+    price:"",
+    fam:"dominique",
+    placeholder:"And women like hunting witches too"
+  },
+  {
+    name:"Elisabeth Clara",
+    price:"",
+    fam:"elisabeth",
+    placeholder:"Your faithless love’s the only hoax I believe in"
+  },
+  {
+    name:"Noah and Nicole",
+    price:"",
+    fam:"noah",
+    placeholder:"Gave me the blues and then purple-pink skies"
+  },
+  {
+    name:"Pumpkin Cheesecake",
+    price:"",
+    fam:"pumpkin",
+    placeholder:"It would’ve been fun if you would’ve been the one"
+  },
+  {
+    name:"Sofia Amoti Starlight",
+    price:"",
+    fam:"sofia",
+    placeholder:"I had a marvelous time ruining everything"
+  }
+]
+
+fonts.forEach(function appendFont(font){
+  $(".font-testing-area").append(`<div class="font"><h3 class="font-title" style="font-family:${font.fam}">${font.name}</h3><input type="text" style="font-family:${font.fam}" placeholder="${font.placeholder}"></div>`)
 })

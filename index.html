@@ -1,138 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Dominique Demetz, Graphic Design</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&display=swap" rel="stylesheet">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello!</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.typekit.net/rbs7bdi.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-</head>
-<body>
-<div class="overlay">
-  <h1>Please picture me <br />
-  In the trees <br />
-  I hit my peak at seven feet <br />
-  In the swing <br />
-  Over the creek <br />
-  I was too scared to jump in <br />
-  But I, I was high in the sky <br />
-  With Pennsylvania under me <br />
-  Are there still beautiful things? <br />
-  Sweet tea in the summer <br />
-  Cross your heart, won't tell no other <br />
-  And though I can't recall your face <br />
-  I still got love for you <br />
-  Your braids like a pattern <br />
-  Love you to the moon and to Saturn <br />
-  Passed down like folk songs <br />
-  The love lasts so long <br />
-  And I've been meaning to tell you <br />
-  I think your house is haunted <br />
-  Your dad is always mad and that must be why <br />
-  And I think you should come live with <br />
-  Me and we can be pirates <br />
-  Then you won't have to cry <br />
-  Or hide in the closet <br />
-  And just like a folk song<br />
-  Our love will be passed on <br />
-  </h1>
-</div>
-<header>
-  <img class="greeting-logo"src="logo.png" alt="Dominique Demetz, Graphic Design">
-  <ul>
-    <li><a href="#portoflio" class="links" id="work-link" onclick="makeHeader()">Work</a></li>
-    <li><a href="#about" class="links" id="about-link" onclick="makeHeader()">About</a></li>
-    <li><a href="fonts.html" class="links" id="font-link" onclick="makeHeader()">Fonts</a></li>
-    <li><a href="index.html" class="links" id="store-link" onclick="makeHeader()">Store</a></li>
-  </ul>
-    </header>
+  </head>
+  <body>
+    <div class="page" id="welcome">
+      <div class="intro">
+        <img id="header-logo" src="logo.png">
+        <nav id="navbar">
+          <a href="#portfolio">projects</a>
+          <a href="#contact">contact</a>
+          <a href="fonts.html">fonts</a>
+        </nav>
+      </div>
+      <div id="view-portfolio">
+        <a href="#portfolio"><h3>view portfolio</h3></a>
+      </div>
+    </div>
 
-  <!-- <div id="views">
-    <button id="view-project"> View by Project </button>
-    <button id="view-meduim"> View by Medium </button>
-  </div> -->
-<!-- <div id="major">
-    <div class="about">
-      <h3>Hi, I'm Dominique,</h3>
-      <h3 id="title"></h3>
-      <div id="titleList">
-      <h3 class="roles" id="gd">a graphic designer</h3>
-      <h3 class="roles" id="ill">an illustrator</h3>
-      <h3 class="roles" id="pe">a photo editor</h3>
-      <h3 class="roles" id="pm">a project manager</h3>
-      <h3 class="roles" id="ve">a video editor</h3>
-      <h3 class="roles" id="wd">a web developer</h3>
+    <div class="page" id="portfolio">
+      <div id="portfolio-heading">
+        <h1>PORTFOLIO</h1>
+        <!-- <button id="search-project"><h3>by project</h3></button>
+        <button id="search-style"><h3>by style</h3></button> -->
+      </div>
+      <!-- <div class="search-by" >
+        <section id="by-project">
+          <li>Bryn Mawr College</li>
+          <li>Color of Music Collective</li>
+          <li>Indiana University</li>
+          <li>JDS Projects</li>
+          <li>Kode with Klossy</li>
+          <li>Recording Academy/GRAMMYs</li>
+        </section>
+        <section id="by-style">
+          <li>Brand Design</li>
+          <li>Graphic Design</li>
+          <li>Illustration</li>
+          <li>Motion Graphics</li>
+          <li>Web Design / Development</li>
+        </section>
+      </div> -->
+      <div class="collage" id="graphics-collage">
+        <h2>graphics</h2>
+        <div class="graphics-photo-collage" id="photo-collage">
+        </div>
+      </div>
+      <div class="collage" id="gif-collage">
+        <h2>animations</h2>
+        <div class="gif-photo-collage" id="photo-collage">
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="contact">
+      <h1>WORK WITH ME</h1>
+      <div id="about-contact">
+        <section id="me">
+          <img src="photos/me.gif" id="profile">
+          <section id="blurb">
+            <h4>Hi, I'm Dominique!</h4>
+            <p>I'm a graphic designer based in the Greater Los Angeles Area.</p>
+            <p>I'm super passionate about turning ideas into real art and making design accessable to everyone. Not only do I create graphics, but I also animate and do full-stack web development. From one-off Instagram posts to full brand design, I want to help you create everything in your mind.</p>
+            <p>Email me at dominique@ddemetz.com to contact me! Hope to hear from you soon!</p>
+            <p>Dominique</p>
+          </section>
+        </section>
+
+        <section id="contact-info">
+          <div id="brands">
+          <h2>brands i've worked with</h2>
+          <div class="brand-photo-collage" id="photo-collage">
+          </div>
+        </div>
+          <!-- <form id="contact-form"> -->
+            <!-- <input id="name" name= "name" type="text" placeholder="Name*" >
+            <input id="org" name= "org" type="text" placeholder="Organization"> -->
+            <!-- change to email type and fix requirements -->
+            <!-- <input id="email" name= "email" type="text" placeholder="Email*" >
+            <input id="subject" name= "subject" type="text" placeholder="Subject*" >
+            <textarea id="message" name= "message" rows="6" placeholder="Message*" ></textarea>
+            <section id="form-options">
+            <p>*required</p>
+            <button id="submit-button" type="submit">Submit</button>
+          </section>
+          </form> -->
+        <!-- </section> -->
+
       </div>
 
-      <h3>based in Los Angeles, Ca</h3>
     </div>
-    <img id="picofme" src="picofme.jpg" />
-</div> -->
 
-  <div class="portfolio"></div>
-<h2>Work featured in and by</h2>
-<center>
-  <div id="brands">
-    <img src="photos/ra.png">
-    <img src="photos/comc.png">
-    <img src="photos/epitaphlogo.png">
-    <img class="extra-large" src="photos/tv.png">
-    <img src="photos/kwk.png">
-    <img class="large" src="photos/vogue.png">
-    <img src="photos/brynmawr.png">
-    <img src="photos/indiana.png">
-    <img class="large" src="photos/ramc.png">
-    <img class="large" src="photos/grammy63.webp">
-  </div>
-<center>
+    <footer>
+      <h4> © 2022 Dominique M Demetz
+    </footer>
 
-  <div id="about">
-    <img src="photos/picofme.jpg">
-    <div id="profile">
-      <h3> Dominique Demetz</h3>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="index.js" type="module"></script> -->
 
-        <section class="profile-item">
-          <img src="photos/Location.svg">
-        <li>Los Angeles, CA</li>
-        </section>
+    <script src="script.js" type="text/javascript"></script>
 
-        <section class="profile-item socials">
-        <button>+ Add Me to Your Contacts</button>
-        <a href="https://www.instagram.com/dmdemetz"><img class="social" src="photos/ig.png"></a>
-        <a href="https://www.linkedin.com/in/demetz"><img class="social" src="photos/li.png"></a>
-      </section>
-
-          <section class="profile-item">
-            <img src="photos/Star.svg" onerror="this.onerror=null;this.src='default-image.jpg';">
-        <li>ddemetz.com</li>
-        </section>
-
-          <section  class="profile-item">
-            <img src="photos/Message.svg">
-        <li>dominique@ddemetz.com</li>
-        </section>
-
-          <section class="profile-item">
-            <img src="photos/Bookmark.svg">
-            <li>Currently Reading:</li><br>
-              <li id="reading">Nothing at the moment!</li>
-        </section>
-
-          </div>
-</div>
-
-  <footer>
-    <img src="logo.png" alt="Dominique Demetz, Graphic Design"><br>
-    <li><a href="#portoflio" class="footer-links">Work</a></li>
-    <li><a href="#about" class="footer-links">About</a></li>
-    <li><a href="fonts.html" class="footer-links">Fonts</a></li>
-    <li><a href="index.html" class="footer-links">Store</a></li>
-    <p>© 2020 by Dominique M Demetz</p>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="style.js"></script>
-    <script src="script.js"></script>
-</body>
+  </body>
 </html>
