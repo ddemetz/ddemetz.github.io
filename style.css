@@ -1,11 +1,23 @@
+/*Universal*/
+
 *{
   scroll-behavior: smooth;
 }
+
+
+
+
+/*Keyframes*/
 
 @keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
 }
+
+
+
+
+/*Font Imports*/
 
 @font-face {
   font-family: mainFont;
@@ -57,31 +69,31 @@
   src: url(fonts/SofiaAmoti-Starlight-Demo.otf);
 }
 
+
+
+
+/*BODY*/
+
 body{
   background-color: #FDF0D5;
   margin: 0;
-}
-
-#header-logo{
-  width: 350px;
 }
 
 .page{
   padding: 40px;
 }
 
-#welcome{
-  height: 100vh;
+footer{
+  font-size:12px;
+  font-family: masqualero, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color:#6DA44D;
+  letter-spacing: 2px;
 }
 
-.intro{
-  position: absolute; /* or absolute */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-}
+
+/*TEXT*/
 
 h1{
   font-family: mainFont;
@@ -103,14 +115,14 @@ h2{
   text-align: right;
 }
 
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
- border: .5px black solid;
+p a{
+	color: black;
 }
+
+
+
+
+/*NAVIGATION*/
 
 nav{
   display: flex;
@@ -134,6 +146,27 @@ nav a:hover{
 
 }
 
+
+
+
+/*PAGE 1: INTRO*/
+
+#header-logo{
+  width: 350px;
+}
+
+#welcome{
+  height: 100vh;
+}
+
+.intro{
+  position: absolute; /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
 
 #view-portfolio{
   font-family: masqualero, sans-serif;
@@ -167,6 +200,11 @@ transition: .2s;
   transition: .5s;
 }
 
+
+
+
+/*PAGE 2: PORTFOLIO*/
+
 #portfolio{
   background-color: #6DA44D;
   margin: 0;
@@ -189,72 +227,10 @@ transition: .2s;
   text-underline-offset: 2px;
 }
 
-.search-by{
-  list-style: none;
-  font-family: masqualero, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 2px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-#by-project, #by-style{
-  display: none;
-  flex-wrap: wrap;
-}
-
-#by-project li, #by-style li{
-  margin: 10px;
-}
-
-.collage{
-  display: flex;
-  align-items:flex-start;
-  margin-bottom: 60px;
-}
-
-.collage h2{
-  writing-mode: vertical-lr;
-  text-orientation: mixed;
-   transform: rotate(180deg);
-}
-
-#photo-collage{
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: center;
-  /* align-items: center; */
-}
-
-.collage img{
-  width :18%;
-  margin: 5px;
-}
-
-.story-background{
-  position: relative;
-  width: 18%;
-  margin:5px;
-}
-
-.gif-overlay{
-  position: absolute;
-  width: 60% !important;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* #gif21{
-  left:42% !important;
-} */
 
 
-.story-background img{
-  width: 100%;
-}
+
+/*PAGE 3: CONTACT*/
 
 #about-contact{
   margin-bottom: 50px;
@@ -301,15 +277,23 @@ transition: .2s;
   margin: auto;
   width: 70%;
   text-align: center;
-  display: flex;
   align-items: center;
 }
 
 #profile{
-  width: 30%;
+  width: 100%;
   margin-right: 20px;
   text-align: center;
 }
+
+#photo-hello h4{
+	display: none;
+}
+
+
+
+
+/*PAGE 3 PART 2: FORM*/
 
 form{
   display: flex;
@@ -364,6 +348,53 @@ button{
   font-style: normal;
 }
 
+
+
+
+/*PHOTO COLLAGES*/
+
+.collage{
+  display: flex;
+  align-items:flex-start;
+  margin-bottom: 60px;
+}
+
+.collage h2{
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+   transform: rotate(180deg);
+}
+
+#photo-collage{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.collage img{
+  width :18%;
+  margin: 5px;
+}
+
+.story-background{
+  position: relative;
+  width: 18%;
+  margin:5px;
+}
+
+.gif-overlay{
+  position: absolute;
+  width: 60% !important;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.story-background img{
+  width: 100%;
+}
+
 #brands{
   width:40%;
 }
@@ -381,14 +412,9 @@ margin-right: 20px;
 }
 
 
-footer{
-  font-size:12px;
-  font-family: masqualero, sans-serif;
-  font-weight: 400;
-  text-align: center;
-  color:#6DA44D;
-  letter-spacing: 2px;
-}
+
+
+/*FONT BOOK*/
 
 #font-logo{
   width: 20%;
@@ -428,4 +454,101 @@ footer{
 #font-page-title{
   text-align: center;
   color:#6DA44D;
+}
+
+
+@media screen and (max-width:600px){
+	
+	#header-logo{
+		width: 100%;
+	}
+	
+	#navbar{
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+		width: 100%;
+	}
+	
+	#navbar a{
+		margin: 3px;
+	}
+	
+	.intro{
+		text-align: center;
+	}
+	
+	#view-portfolio{
+		display: none;
+	}
+	
+	#portfolio-heading{
+		text-align: center;
+	}
+	
+	#portfolio-heading h1{
+		font-size: 30px;
+		width: 100%;
+	}
+	
+	.collage img{
+		width: 45%;
+	}
+	
+	.collage h2{
+		font-size: 90%;
+	}
+	.page{
+		padding: 15px;
+	}
+	
+	.gif-photo-collage{
+		margin: 0;
+	}
+	
+	.story-background{
+		width: 45%;
+	}
+	
+	.story-background img{
+		width: 100%;
+	}
+	
+	#contact h1{
+		font-size: 30px;
+		text-align: center;
+	}
+	
+	#me {
+		flex-direction: column;
+	}
+	
+	#blurb h4{
+		display: none;
+	}
+	
+	#photo-hello{
+ 		text-align: right;
+ 		display: flex;
+ 		font-family: masqualero, sans-serif;
+ 		font-weight: 400;
+		font-style: normal;
+		align-items: flex-end;
+		
+	}
+	
+	#photo-hello img{
+		width: 30%
+	}
+
+	#photo-hello h4{
+		display: block !important;
+ 		color: #6DA44D;
+  		margin-bottom:0;
+  		font-size:35px;
+	}
+	
+	#brands{
+		width: 100%;
+	}
 }
